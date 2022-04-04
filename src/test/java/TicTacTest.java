@@ -14,7 +14,11 @@ public class TicTacTest {
     public void checkSpaceNotOccupied(){
         Assertions.assertTrue(ticTac.playMove(1,1,"X"));
     }
-
+    @Test
+    public void checkSpaceIsOccupied(){
+        ticTac.playMove(0,1,"O");
+        Assertions.assertFalse(ticTac.playMove(0,1,"X"));
+    }
 
 
 }
