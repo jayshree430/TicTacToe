@@ -19,4 +19,13 @@ public class TicTac {
         }
         return false;
     }
+    public boolean checkPlayerWon(String player) {
+
+        int topRow = 0;
+
+        for (int i = 0; i < board.length; i++) {
+            if (board[0][i].equals(player)) topRow++;
+        }
+        return topRow == 3 ;
+    }
 }

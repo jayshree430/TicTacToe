@@ -38,6 +38,12 @@ public class TicTacTest {
     public void checkInvalidMinusYMove(){
         Assertions.assertFalse(ticTac.playMove(2,-2,"O"));
     }
-
+    @Test
+    public void checkWinnerIfRowTaken(){
+        ticTac.playMove(0,0, "X");
+        ticTac.playMove(0,1, "X");
+        ticTac.playMove(0,2, "X");
+        Assertions.assertTrue(ticTac.checkPlayerWon("X"));
+    }
 
 }
