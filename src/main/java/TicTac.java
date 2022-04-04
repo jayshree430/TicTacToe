@@ -22,10 +22,23 @@ public class TicTac {
     public boolean checkPlayerWon(String player) {
 
         int topRow = 0;
-
+        int middleRow = 0;
+        int bottomRow = 0;
         for (int i = 0; i < board.length; i++) {
             if (board[0][i].equals(player)) topRow++;
+            if (board[1][i].equals(player)) middleRow++;
+            if (board[2][i].equals(player)) bottomRow++;
         }
-        return topRow == 3 ;
+        // Vertical
+        int leftColumn = 0;
+        int middleColumn = 0;
+        int rightColumn = 0;
+        for (String[] strings : board) {
+            if (strings[0].equals(player)) leftColumn++;
+            if (strings[1].equals(player)) middleColumn++;
+            if (strings[2].equals(player)) rightColumn++;
+        }
+        return topRow == 3 || middleRow == 3 || bottomRow == 3 ||
+                leftColumn == 3 || middleColumn == 3 || rightColumn == 3;
     }
 }

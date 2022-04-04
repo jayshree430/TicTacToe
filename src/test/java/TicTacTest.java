@@ -45,5 +45,13 @@ public class TicTacTest {
         ticTac.playMove(0,2, "X");
         Assertions.assertTrue(ticTac.checkPlayerWon("X"));
     }
+    @Test
+    public void checkLeftColumnXWin(){
+        ticTac.playMove(0,0,"X");
+        ticTac.playMove(1,0,"X");
+        ticTac.playMove(2,0,"X");
+        Assertions.assertTrue(ticTac.checkPlayerWon("X"));
+    }
+
 
 }
