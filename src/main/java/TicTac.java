@@ -8,7 +8,7 @@ public class TicTac {
             {" ", " ", " "}};
 
     public boolean playMove(int x, int y, String player){
-        // Check the move is allowed
+        // Check the move is allowed or not
         if (x > 2 || x < 0 || y > 2 || y < 0) {
             //Move not allowed
             return false;
@@ -37,6 +37,13 @@ public class TicTac {
             if (strings[0].equals(player)) leftColumn++;
             if (strings[1].equals(player)) middleColumn++;
             if (strings[2].equals(player)) rightColumn++;
+        }
+        // Diagonal
+        if (board[1][1].equals(player)) {
+            if (board[0][0].equals(player) && board[2][2].equals(player) ||
+                    board[0][2].equals(player) && board[2][0].equals(player)) {
+                return true;
+            }
         }
         return topRow == 3 || middleRow == 3 || bottomRow == 3 ||
                 leftColumn == 3 || middleColumn == 3 || rightColumn == 3;

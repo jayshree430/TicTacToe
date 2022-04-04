@@ -46,10 +46,31 @@ public class TicTacTest {
         Assertions.assertTrue(ticTac.checkPlayerWon("X"));
     }
     @Test
-    public void checkLeftColumnXWin(){
+    public void checkWinnerForLeftColumn(){
         ticTac.playMove(0,0,"X");
         ticTac.playMove(1,0,"X");
         ticTac.playMove(2,0,"X");
+        Assertions.assertTrue(ticTac.checkPlayerWon("X"));
+    }
+    @Test
+    public void checkWinnerForMiddleColumn(){
+        ticTac.playMove(0,1,"X");
+        ticTac.playMove(1,1,"X");
+        ticTac.playMove(2,1,"X");
+        Assertions.assertTrue(ticTac.checkPlayerWon("X"));
+    }
+    @Test
+    public void checkPlayerODiagonal(){
+        ticTac.playMove(0,2,"O");
+        ticTac.playMove(1,1,"O");
+        ticTac.playMove(2,0,"O");
+        Assertions.assertTrue(ticTac.checkPlayerWon("O"));
+    }
+    @Test
+    public void checkTheOtherDiagonal(){
+        ticTac.playMove(0,0,"X");
+        ticTac.playMove(1,1,"X");
+        ticTac.playMove(2,2,"X");
         Assertions.assertTrue(ticTac.checkPlayerWon("X"));
     }
 
