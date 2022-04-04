@@ -19,6 +19,25 @@ public class TicTacTest {
         ticTac.playMove(0,1,"O");
         Assertions.assertFalse(ticTac.playMove(0,1,"X"));
     }
+    @Test
+    public void checkInvalidXMove(){
+        Assertions.assertFalse(ticTac.playMove(3,0,"O"));
+    }
+
+    @Test
+    public void checkInvalidMinusXMove(){
+        Assertions.assertFalse(ticTac.playMove(-1,2,"O"));
+    }
+
+    @Test
+    public void checkInvalidYMove(){
+        Assertions.assertFalse(ticTac.playMove(2,4,"O"));
+    }
+
+    @Test
+    public void checkInvalidMinusYMove(){
+        Assertions.assertFalse(ticTac.playMove(2,-2,"O"));
+    }
 
 
 }
